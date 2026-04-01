@@ -71,7 +71,7 @@ export default function KeywordAnalysis({ keywords }: KeywordAnalysisProps) {
                 : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'
             }`}
           >
-            {f === 'all' ? `All (${keywords.length})` : f === 'found' ? `Found (${foundKeywords.length})` : `Added (${missingKeywords.length})`}
+            {f === 'all' ? `All (${keywords.length})` : f === 'found' ? `Found (${foundKeywords.length})` : `Missing (${missingKeywords.length})`}
           </button>
         ))}
       </div>
@@ -86,7 +86,7 @@ export default function KeywordAnalysis({ keywords }: KeywordAnalysisProps) {
                 ? 'bg-green-500/15 border border-green-500/30 text-green-300'
                 : 'bg-red-500/15 border border-red-500/30 text-red-300'
             }`}
-            title={kw.context || (kw.found ? 'Found in optimized resume' : 'Added to optimized resume')}
+            title={kw.context || (kw.found ? 'Found in optimized resume' : 'Not found in optimized resume')}
           >
             {kw.found ? (
               <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
